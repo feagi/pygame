@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  net:
+    driver: bridge
+
+services:
+  pygame:
+    build: ./aliens
+    ports:
+      - "6084:6084"
+#    env_file:
+#      - ./.env
+    privileged: true
+    networks:
+      - net
